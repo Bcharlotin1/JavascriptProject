@@ -5,6 +5,7 @@ class CreatePets < ActiveRecord::Migration[6.1]
       t.string :gender
       t.string :type
       t.integer :happiness
+      t.string :image
       t.belongs_to :user, null: false, foreign_key: true
 
       t.timestamps
