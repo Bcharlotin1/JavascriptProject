@@ -13,51 +13,85 @@
 const port = `http://localhost:3000`;
 const board = document.getElementById("board")
 const canvas = document.getElementById("game")
-const formContainer = document.getElementById("form_container")
+const ctx = canvas.getContext("2d");
+const userCall = new UserApi(port);
 
-const playGameButton = document.getElementById("play_button")
+// call ot check if it is working 
+userCall.getUser()
+
+
+// places dog image on canvas 
+//   const image = new Image();
+//   image.src = "stylesheet/images/dogs/Dog_brown.png";
+//   image.onload = () => {
+//   ctx.drawImage(image, 125,  50, 20, 20)
+//-------------------canvas once user signs in 
+
+// rectangular console
+//  function addConsole(){
+//   ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
+//   ctx.fillRect(0, 0, 90, 800);
+//  }
+//  addConsole()
+//------username 
+// ctx.font = "30px Arial";
+// ctx.fillText("Hello World", 10, 50);
 
 
 
-playGameButton.addEventListener("click", handleUserSignin)
+//--------- add event listner to canvas
+// canvas.addEventListener("click", ()=>{
+//   console.log
+// })
 
-function handleUserSignin() {
+
+//----form evnets  to get user input
+// const formContainer = document.getElementById("form_container")
+
+// const playGameButton = document.getElementById("play_button")
+
+
+
+// playGameButton.addEventListener("click", handleUserSignin)
+
+// function handleUserSignin() {
   
-  formContainer.innerHTML = `
-    <div class="form_container">
-    <form id="form">
-      <p>Welcome</p>
-      <label for="username">Username:</label><br>
-      <input type="text" name="username" id="username"><br>
-      <input type="submit" value="Submit">
-    </form>`
+//   formContainer.innerHTML = `
+//     <div class="form_container">
+//     <form id="form">
+//       <p>Welcome</p>
+//       <label for="username">Username:</label><br>
+//       <input type="text" name="username" id="username"><br>
+//       <input type="submit" value="Submit">
+//     </form>`
 
-    const form = document.getElementById("form")
+//     const form = document.getElementById("form")
     
-    form.addEventListener("submit", handleSubmit)
-}
+//     form.addEventListener("submit", handleSubmit)
+// }
 
-function handleSubmit(e){
-  e.preventDefault();
+// const form = document.getElementById("form")
+// const input = document.getElementById("username")
 
-  const input = document.getElementById("username")
-  const userInput = input.value 
-  debugger
-  makeCallToApi(userInput)
+// function handleSubmit(e){
+//   e.preventDefault();
+//   const userInput = e.target.username.value 
+//   debugger
+//   // makeCallToApi(userInput)
 
-}
-function makeCallToApi(username){
-  // console.log(`${baseUrl}${search}`)
-  // console.log(baseUrl + search)
-  fetch(`${port}`)
-  .then(resp => resp.json())
-  .then(data => {
-      console.log(data)
-      // debugger
-      // addMealsToCanvas(data["meals"])
-  })
-  console.log("b")
-}
+// }
+// function makeCallToApi(username){
+//   // console.log(`${baseUrl}${search}`)
+//   // console.log(baseUrl + search)
+//   fetch(`${port}`)
+//   .then(resp => resp.json())
+//   .then(data => {
+//       console.log(data)
+//       // debugger
+//       // addMealsToCanvas(data["meals"])
+//   })
+//   console.log("b")
+// }
 
 // function addMealsToCanvas(data){
 //   // debugger
