@@ -9,5 +9,5 @@
 player1 = User.create(username: "Bee")
 player2 = User.create(username: "Archy")
 
-Domino = Pet.create(name:"Domino", gender: "F", happiness: 100, image:"/Users/biancacharlotin/Development/code/javascriptProject/frontend/stylesheet/images/dogs/Dog_Gold.png", user_id: player1.id)
+Domino = Pet.create(name:"Domino", gender: "F", user: player1)
 

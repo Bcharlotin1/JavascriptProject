@@ -5,43 +5,32 @@ class UserApi{
 
     }
 
-    getUser(){
-        fetch(this.port +`/users`)
+
+    createOrGetUser(e){
+        const username = e.target.username.value 
+    
+        const userInfo = {
+            username
+        }
+        const configObject = {
+            method: 'POST',
+            headers: {
+                "Content-Type": "application/json",
+                Accept: "application/json"
+            },
+            body: JSON.stringify(userInfo)
+        }
+     
+        fetch(this.port +`/users`, configObject)
         .then(response => response.json())
-        .then(data => {
-                for(const user of data){
-                    let newUser = new User(user)
-                    // make a method that post the user name  and it's pet on the canvas 
-                    newUser.attachToCanvas()
-                    // debugger
-                }
+        .then(json => {
+    
+            const newUser = new User(json)
+            newUser.attachUserToCanvas()
+            //creating our javascript object after creating an object in the backend
         })
-        .catch()
+        .catch(error => {console.log(error.message)})
     }
-
-
-    // getUser(name){
-    //     fetch(this.port +`/users`)
-    //     .then(response => response.json())
-    //     .then(data => {
-    //             for(const user of data){
-    //                     if(user.username === name){
-
-    //                     }
-    //                 // make a method that post the user name  and it's pet on the canvas 
-    //                 // newUser.attachToCanvas()
-    //                 debugger
-    //             }
-    //     })
-    //     .catch()
-    // }
-    // constructor(username){
-    //     this.username = username
-    // }
-
-    // createUser(username){
-        
-    // }
 
 
     

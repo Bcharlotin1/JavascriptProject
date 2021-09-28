@@ -1,35 +1,55 @@
 class User{
+    static allUsers = []
     constructor({username, id, pets}){
         this.username = username
         this.id = id
         this.pets = pets
-        // const canvas = document.getElementById("game")
-        // const ctx = canvas.getContext("2d") 
+        User.allUsers.push(this)
+    
     }
 
     // fillinf the infmations/ post method
 
-    attachToCanvas(){
+    attachUserToCanvas(){
         //create the left hand item box
+        this.createConsole()
+        
+        this.attatchUsernameToCanvas()
+       
+        this.addCreatebutton()
+        
+    }
+
+    createConsole(){
         ctx.fillStyle = "rgba(255, 255, 255, 0.5)";
         ctx.fillRect(0, 0, 90, 800);
         ctx.fillRec
-        ctx.font = "30px Arial";
-        ctx.fillText(`${this.username}`, 90, 50);
     }
 
-    drawUserDogs(){
-        const image = new Image();
-        image.src = "stylesheet/images/dogs/Dog_brown.png";
-        image.onload = () => {
-        ctx.drawImage(image, 125,  50, 20, 20)
-        }
+    attatchUsernameToCanvas(){
+        ctx.fillStyle = "black";
+        ctx.font = "10px Arial";
+        ctx.textAlign = 'start';
+        ctx.fillText(`${this.username}`, 20, 10);
     }
 
-    // drawUserDog(){
-    //     const image = new Image();
-    //     image.src = "stylesheet/images/dogs/Dog_brown.png";
-    //     image.onload = () => {
-    //     ctx.drawImage(image, 125,  50, 20, 20)
-    // }
+    addCreatebutton(){
+        ctx.beginPath();
+        ctx.rect(250, 350, 70, 50); 
+        ctx.fillStyle = '#FFFFFF'; 
+        ctx.fillStyle = 'rgba(225,225,225)';
+        ctx.fillRect(25,72,32,32);
+        ctx.fill(); 
+        ctx.lineWidth = 2;
+        ctx.strokeStyle = '#000000'; 
+        ctx.stroke();
+        ctx.closePath();
+        ctx.font = '40pt Arial';
+        ctx.fillStyle = '#000000';
+        ctx.fillText('New Pet', 345, 415);
+        ctx.closePath();
+      }
+
+
+  
 }

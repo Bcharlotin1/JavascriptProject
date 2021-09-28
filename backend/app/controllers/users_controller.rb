@@ -4,13 +4,17 @@ class UsersController < ApplicationController
         render json: users
     end
     
-    # def create 
-    #     user = User.new(username)
-    #     if user.save 
-    #         render json: user
-    #     else
-    #         render json: {error: "Couldnt be saved"}
-    #     end
-    # end
+    def create 
 
+        if user = User.find_or_create_by(user_params)
+            render json: user
+        else
+            render json: {error: user.errors.full_messages}
+        end
+    end
+
+private
+    def user_params
+        params.require(:user).permit(:username)
+    end
 end
