@@ -10,7 +10,7 @@ class PetApi{
         
             for(const pet of data){
                 let newPet = new Pet(pet)
-                //   newPet.render()
+                  newPet.render()
             }
         })
         .catch()

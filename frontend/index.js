@@ -14,8 +14,16 @@ const port = `http://localhost:3000`;
 const board = document.getElementById("board")
 const canvas = document.getElementById("game")
 const ctx = canvas.getContext("2d");
+const consoleElement = document.getElementById("wrapper")
+const userElement = document.getElementById("name")
+// const userPetsListElement = document.getElementById("pet_list")
+// const createPetButton = document.getElementById("pet_button")
 const userCall = new UserApi(port)
 const petCall = new PetApi(port)
+
+ 
+  
+
 // const newUser = new User(userInput)
 
 // call ot check if it is working 
@@ -79,35 +87,38 @@ playGameButton.addEventListener("click", div_show)
     // calling the userAPI
   }
  
+  
 
-// //create your shape data in a Path2D object
-// const path = new Path2D()
-// path.rect(250, 350, 200, 100)
-// path.rect(25,72,32,32)
-// path.closePath()
-
-// //draw your shape data to the ctx
-// ctx.fillStyle = "#FFFFFF"
-// ctx.fillStyle = "rgba(225,225,225,0.5)"
-// ctx.fill(path)
-// ctx.lineWidth = 2
-// ctx.strokeStyle = "#000000"
-// ctx.stroke(path)
-
-// function getXY(canvas, event){ //adjust mouse click to canvas coordinates
-//   const rect = canvas.getBoundingClientRect()
-//   const y = event.clientY - rect.top
-//   const x = event.clientX - rect.left
-//   return {x:x, y:y}
-// }
-
-// document.addEventListener("click",  function (e) {
-//   const XY = getXY(canvas, e)
-//   //use the shape data to determine if there is a collision
-//   if(ctx.isPointInPath(path, XY.x, XY.y)) {
-//     // Do Something with the click
-//     alert("clicked in rectangle")
-//   }
-// }, false)
+  // const path = new Path2D()
+  // // path.rect(250, 350, 200, 100)
+  // path.rect(20,120,60,10)
+  // path.closePath()
+  
+  // //draw your shape data to the context
+  // ctx.fillStyle = "pink"
+  // ctx.fillStyle = "pink"
+  // ctx.fill(path)
+  // ctx.lineWidth = 2
+  // ctx.strokeStyle = "#000000"
+  // ctx.stroke(path)
+  // ctx.fillStyle = "black";
+  // ctx.font = "10px Arial";
+  // ctx.fillText(`Create Pet`, 25, 128);
+  
+  // function getXY(canvas, event){ //adjust mouse click to canvas coordinates
+  //   const rect = canvas.getBoundingClientRect()
+  //   const y = event.clientY 
+  //   const x = event.clientX 
+  //   return {x:x, y:y}
+  // }
+  
+  // document.addEventListener("click",  function (e) {
+  //   // const XY = getXY(canvas, e)
+  //   //use the shape data to determine if there is a collision
+  //   if(ctx.isPointInPath(path, 25, 128)) {
+  //     // Do Something with the click
+  //     alert("clicked in rectangle")
+  //   }
+  // }, false)
 
  

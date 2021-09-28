@@ -1,6 +1,6 @@
 class Pet{
     static all = [];
-    constructor(name, gender ,type, happines, image, user_id){
+    constructor({name, gender ,type, happines, image, user_id}){
         this.name = name
         this.gender = gender
         this.type = type
@@ -8,23 +8,23 @@ class Pet{
         this.image = image
         this.user_id = user_id
         Pet.all.push(this)
+        
     }
 
     render(){
-       const allUserPets =  []
-       Pet.all.filter((Object) =>{ 
-        // debugger
-         if (Object.name.user_id === this.user_id){
-          
-             allUserPets.push(Object.name) 
-         }
-        })
-
+        const allUserPets = Pet.all.filter((obj) => obj.user_id === this.user_id)
         
-        // allUserPets.forEach((pet))
-        // ctx.fillStyle = "black";
-        // ctx.font = "10px Arial";
-        // ctx.textAlign = 'start';
-        // ctx.fillText(`${this.username}`, 20, 10);
+        // Pet.all.forEach(pet=>{
+        //     newElement.innerHTML += 
+        //     `<li id= "div_pets">
+        //     <img src=${pet.image}><br>
+        //         ${pet.name}}<br>
+        //         ${pet.gender}
+        //     </li>`
+           
+        // })
+    //    allUserPets.first.image
     }
+
+  
 }
