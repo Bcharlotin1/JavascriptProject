@@ -47,7 +47,7 @@ class User{
     }
 
     createPetForm(){
-        document.getElementById('abc').style.display = "block";
+        document.getElementById('pet_form').style.display = "block";
     }   
     
     

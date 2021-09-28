@@ -58,7 +58,32 @@
             <!-- <img id="close" src="images/3.png" onclick ="div_hide()"> -->
             <h2>Enter Username</h2>
             <hr>
-            <input id="username" name="username" placeholder="Username" type="text">
+            <div>
+                <input type="radio" id="image" name="image" value="stylesheet/images/dogs/Dog_brown.png"
+                       checked>
+                <img src="stylesheet/images/dogs/Dog_brown.png">
+                
+              </div>
+              
+              <div>
+                <input type="radio" id="image" name="image" value="stylesheet/images/dogs/Dog_Gold.png"
+                       checked>
+                <img src="stylesheet/images/dogs/Dog_Gold.png">
+              </div>
+              
+              <div>
+                <input type="radio" id="image" name="image" value="stylesheet/images/dogs/Dog_Grey.png"
+                       checked>
+                <img src="stylesheet/images/dogs/Dog_Grey.png">
+              </div>
+
+            <input id="name" name="name" placeholder="name" type="text">
+
+            <select id="gender" name="gender">
+                <option value="Female">Female</option>
+                <option value="Male">Male</option>
+            </select>
+
             <input type="submit" id ="submit"><a href="javascript:%20check_empty()"></a>
             </form>
             </div>
