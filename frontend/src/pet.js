@@ -1,13 +1,16 @@
 class Pet{
     static all = [];
-    constructor({name, gender ,type, happines, image, user_id}){
+
+
+    constructor({name, gender ,dog_type, happiness, image, user_id}){
         this.name = name
         this.gender = gender
-        this.type = type
-        this.happines = happines
+        this.dog_type = dog_type
+        this.happiness = happiness
         this.image = image
         this.user_id = user_id
         Pet.all.push(this)
+        
         
     }
 
@@ -25,6 +28,6 @@ class Pet{
         // })
     //    allUserPets.first.image
     }
-
+    
   
 }

@@ -9,10 +9,9 @@ class PetsController < ApplicationController
     render json: pet
   end
   
-  def create 
+  def create
     pet = Pet.new(pet_params)
     pet.happiness = 100
-    byebug
    if pet.save
         render json: pet
     else
@@ -40,6 +39,6 @@ class PetsController < ApplicationController
   
   private
     def pet_params
-      params.require(:pet).permit(:name, :gender, :type, :happiness, :image, :user_id)
+      params.require(:pet).permit(:name, :gender, :dog_type, :happiness, :image, :username)
     end
 end

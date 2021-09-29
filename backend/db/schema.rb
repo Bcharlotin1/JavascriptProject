@@ -18,7 +18,7 @@ ActiveRecord::Schema.define(version: 2021_09_24_164914) do
   create_table "pets", force: :cascade do |t|
     t.string "name"
     t.string "gender"
-    t.string "type"
+    t.string "dog_type"
     t.integer "happiness"
     t.string "image"
     t.bigint "user_id", null: false

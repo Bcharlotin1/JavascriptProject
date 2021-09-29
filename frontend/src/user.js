@@ -7,8 +7,8 @@ class User{
         User.allUsers.push(this)
         
     }
-
-    // fillinf the infmations/ post method
+    static currentUser = this.id
+    // filling of the infmations/ post method
 
     attachUserToDom(){
         //create the left hand item box
@@ -17,7 +17,7 @@ class User{
             <div class="profile">
                 <img src="stylesheet/images/other/Gamer_Icon.png">
 
-                <h3>${this.username}<h3>
+                <h3 id ="user-${this.id}">${this.username}<h3>
 
                 <h3>Pets</h3>
 
@@ -31,24 +31,41 @@ class User{
             </div> 
         </div>`
         
+        this.attachPetToDom()
+    }
+
+    attachPetToDom(){
         const userPetsListElement = document.getElementById("pet_list")
         const createPetButton = document.getElementById("pet_button")
+        userPetsListElement.innerHTML = ""
         
         this.pets.forEach(pet => {
+           
             userPetsListElement.innerHTML +=
             `<li id= "div_pets">
                 <img src=${pet.image}><br>
-                ${pet.name}}<br>
+                ${pet.name}<br>
                 ${pet.gender}
             </li>`
         });
        
-        createPetButton.addEventListener("click", this.createPetForm)
+        createPetButton.addEventListener("click", this.showPetForm)
+
     }
 
-    createPetForm(){
-        document.getElementById('pet_form').style.display = "block";
-    }   
+    showPetForm(){
+        document.getElementById('pet_form_block').style.display = "block"; 
+        
+    } 
+
+   
+    // handlePetSubmit(e){
+    //     console.log(e)
+    //     debugger
+    //     // e.preventDefault();
+    //     // document.getElementById('pet_form_block').style.display = "none";
+    //     // petCall.createPet()
+    // }  
     
     
 

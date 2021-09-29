@@ -15,11 +15,18 @@ const board = document.getElementById("board")
 const canvas = document.getElementById("game")
 const ctx = canvas.getContext("2d");
 const consoleElement = document.getElementById("wrapper")
+const playGameButton = document.getElementById("popup")
 const userElement = document.getElementById("name")
-// const userPetsListElement = document.getElementById("pet_list")
-// const createPetButton = document.getElementById("pet_button")
+const userForm = document.getElementById('user_form')
+const petForm = document.getElementById('pet_form')
 const userCall = new UserApi(port)
 const petCall = new PetApi(port)
+//----- pet info
+// const dogImage = document.getElementById("image")
+// const brownDogImage = dogImage[0]
+
+// const goldDogImage = dogImage[1]
+// const greyDogImage = dogImage[3]
 
  
   
@@ -56,10 +63,6 @@ const petCall = new PetApi(port)
 
 
 //----form evnets to get user input
-const formContainer = document.getElementById("form_container")
-
-const playGameButton = document.getElementById("popup")
-
 
 playGameButton.addEventListener("click", div_show)
 
@@ -67,7 +70,7 @@ playGameButton.addEventListener("click", div_show)
   function div_show() {
   document.getElementById('abc').style.display = "block";
   // black = Element is rendered as a block-level element
-  form.addEventListener("submit", handleSubmit)
+  userForm.addEventListener("submit", handleSubmit)
   }
   //Function to Hide Popup
   function div_hide(){
@@ -75,19 +78,24 @@ playGameButton.addEventListener("click", div_show)
   // none =Element will not be displayed
   }
 
-  const form = document.getElementById("form")
-  const input = document.getElementById("username")
-
   function handleSubmit(e){
     div_hide()
+    playGameButton.style.display = "none"
     //hids form after submission 
     e.preventDefault();
     userCall.createOrGetUser(e)
     petCall.getPets()
     // calling the userAPI
   }
- 
+ //--------------------------------------
+  // pet form event listener
+  petForm.addEventListener("submit", handlePetSubmit)
   
+  function handlePetSubmit(e){
+    e.preventDefault();
+    document.getElementById('pet_form_block').style.display = "none";
+    petCall.createPet()
+}  
 
   // const path = new Path2D()
   // // path.rect(250, 350, 200, 100)

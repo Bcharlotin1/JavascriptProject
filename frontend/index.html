@@ -36,7 +36,7 @@
             <!-- Popup Div Starts Here -->
             <div id="playgameform">
             <!-- Contact Us Form -->
-            <form id="form" name="form">
+            <form class="form" id ="user_form" name="form">
             <!-- <img id="close" src="images/3.png" onclick ="div_hide()"> -->
             <h2>Enter Username</h2>
             <hr>
@@ -50,39 +50,45 @@
     </div>
 
     <div id="playgameform">
-        <div id="pet_form">
+        <div id="pet_form_block">
             <!-- Popup Div Starts Here -->
             <div id="playgameform">
-            <!-- Contact Us Form -->
-            <form id="form" name="form">
-            <!-- <img id="close" src="images/3.png" onclick ="div_hide()"> -->
-            <h2>Enter Username</h2>
+            <form class="form" id="pet_form" name="form">
+            <h2>Create Pet</h2>
             <hr>
-            <div>
-                <input type="radio" id="image" name="image" value="stylesheet/images/dogs/Dog_brown.png"
+                <div>
+                <h3>Choose Pet</h3><br>
+                <input type="radio" id="image" name="image" value="stylesheet/images/dogs/Dog_brown.png" data-type ="Brown Dog"
                        checked>
+                       
                 <img src="stylesheet/images/dogs/Dog_brown.png">
                 
               </div>
               
               <div>
-                <input type="radio" id="image" name="image" value="stylesheet/images/dogs/Dog_Gold.png"
-                       checked>
+                <input type="radio" id="image" name="image" value="stylesheet/images/dogs/Dog_Gold.png" data-type ="Gold Dog" checked>
+
                 <img src="stylesheet/images/dogs/Dog_Gold.png">
               </div>
               
               <div>
-                <input type="radio" id="image" name="image" value="stylesheet/images/dogs/Dog_Grey.png"
-                       checked>
-                <img src="stylesheet/images/dogs/Dog_Grey.png">
-              </div>
+                <input type="radio" id="image" name="image" value="stylesheet/images/dogs/Dog_Grey.png" data-type ="Grey Dog" checked>
 
+                <img src="stylesheet/images/dogs/Dog_Grey.png">
+              </div><br>
+
+              <h3> Name Pet</h3><br>
             <input id="name" name="name" placeholder="name" type="text">
 
-            <select id="gender" name="gender">
-                <option value="Female">Female</option>
-                <option value="Male">Male</option>
-            </select>
+            <h3>Choose Gender</h3><br>
+            <div>
+                 <input type="radio" id="gender" name="gender" value="Female" checked>
+                 Female</input>
+            </div>
+            <div>
+                <input type="radio" id="gender" name="gender" value="Male" checked>Male</input>
+           </div>
+
 
             <input type="submit" id ="submit"><a href="javascript:%20check_empty()"></a>
             </form>
