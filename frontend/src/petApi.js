@@ -64,13 +64,23 @@ class PetApi{
             //binded data to  filter so that we can have acces to data
             user[0].pets.push(newPet)
             //creates new pet in js class
-            user[0].attachPetToDom()
+            Pet.attachPetToDom(user[0])
             //attaches users new pet to don
         }).catch(error => {console.log(error.message)})
     }
 
     test(user, data){
         return user.user.username === data.username
+    }
+
+
+    deletePet(e){
+        debugger
+        const id = e.target.dataset.id
+        e.target.parentElement.remove()
+        fetch(`${this.port}/pets/${id}`, {method: 'DELETE'})
+        .then(response => response.json())
+        .then(json => alert(json.message))
     }
 
 }

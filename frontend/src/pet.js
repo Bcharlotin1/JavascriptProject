@@ -16,7 +16,6 @@ class Pet{
 
 
     render(){
-        // debugger
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         //clears canvas 
         //places dog image on canvas 
@@ -28,9 +27,9 @@ class Pet{
     }
 
     static attachPetToDom =(userObj)=>{
-        // debugg
         ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
+         //clears canvas 
+
         const userPetsListElement = document.getElementById("pet_list")
         const createPetButton = document.getElementById("pet_button")
         userPetsListElement.innerHTML = ""
@@ -38,7 +37,7 @@ class Pet{
         userObj.pets.forEach(pet => {
             // const newpet = new Pet(pet)
             //do i need to creat a java script object 
-            // debugger
+
             userPetsListElement.innerHTML +=
     
             `<li><input type='radio' class= "div_pets" name='div_pets' value='${pet.image}' checked>
@@ -54,8 +53,12 @@ class Pet{
         });
     
        
+        
         const petConsolebutons = document.querySelectorAll(".div_pets")
-
+        const deleteButton = document.getElementsByClassName("delete_button")
+        // grabbing all class names 
+        // debugger
+        deleteButton.addEventListener("click", ()=>{debugger})
         createPetButton.addEventListener("click", this.showPetForm)
 
     }
@@ -65,6 +68,14 @@ class Pet{
         document.getElementById('pet_form_block').style.display = "block"; 
         
     } 
+
+    
+    // displayPet(){
+       
+    // }
+    
+  
+
 
 
 
