@@ -21,12 +21,7 @@ const userForm = document.getElementById('user_form')
 const petForm = document.getElementById('pet_form')
 const userCall = new UserApi(port)
 const petCall = new PetApi(port)
-//----- pet info
-// const dogImage = document.getElementById("image")
-// const brownDogImage = dogImage[0]
 
-// const goldDogImage = dogImage[1]
-// const greyDogImage = dogImage[3]
 
  
   
@@ -120,13 +115,6 @@ playGameButton.addEventListener("click", div_show)
   //   return {x:x, y:y}
   // }
   
-  // document.addEventListener("click",  function (e) {
-  //   // const XY = getXY(canvas, e)
-  //   //use the shape data to determine if there is a collision
-  //   if(ctx.isPointInPath(path, 25, 128)) {
-  //     // Do Something with the click
-  //     alert("clicked in rectangle")
-  //   }
-  // }, false)
+ 
 
  

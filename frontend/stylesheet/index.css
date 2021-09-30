@@ -22,8 +22,9 @@ ul {
 }
 
 #play_game_button{
-    align-self: center;
-
+    text-align: right;
+    margin-top: 100px;
+    margin-right: 50px;
 
 }
  /* all form designs */
@@ -167,12 +168,21 @@ ul {
 }
 
 /* Pet orgnization on console*/
-#div_pets{
+.div_pets{
     color: black;
     grid-column: auto;
 }
 
 #pet_button{
+    width: 100px;;
+    height:45px;
+    border-radius:3px;
+    background-color:#cd853f;
+    font-family:'Raleway',sans-serif;
+    margin-left: 50px;
+}
+.delete_button{
+    text-align: center;
     width: 100px;;
     height:45px;
     border-radius:3px;

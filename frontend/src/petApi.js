@@ -63,8 +63,9 @@ class PetApi{
             const user = User.allUsers.filter(this.test.bind(null, data))
             //binded data to  filter so that we can have acces to data
             user[0].pets.push(newPet)
-                user[0].attachPetToDom()
-
+            //creates new pet in js class
+            user[0].attachPetToDom()
+            //attaches users new pet to don
         }).catch(error => {console.log(error.message)})
     }
 

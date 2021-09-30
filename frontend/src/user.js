@@ -11,6 +11,8 @@ class User{
     // filling of the infmations/ post method
 
     attachUserToDom(){
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        //clears canvas
         //create the left hand item box
         consoleElement.innerHTML += `
         <div class="sidebar">
@@ -22,6 +24,7 @@ class User{
                 <h3>Pets</h3>
 
                 <ul id="pet_list">
+                
                   
                 </ul>
 
@@ -35,28 +38,42 @@ class User{
     }
 
     attachPetToDom(){
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
         const userPetsListElement = document.getElementById("pet_list")
         const createPetButton = document.getElementById("pet_button")
         userPetsListElement.innerHTML = ""
-        
+
         this.pets.forEach(pet => {
-           
-            userPetsListElement.innerHTML +=
-            `<li id= "div_pets">
+            debugger
+            pet.element.innerHTML =
+    
+            `<li><input type='radio' class= "div_pets" name='div_pets' value='${pet,image}' checked>
                 <img src=${pet.image}><br>
                 ${pet.name}<br>
                 ${pet.gender}
+            </input>
+
+            <div class="delete_dog">
+                <button class="delete_button" data-id=${pet.id}> Delete</button>
+            </div> 
             </li>`
         });
-       
+    
+        userPetsListElement.append(pet.element)
+        const petConsolebutons = document.querySelectorAll(".div_pets")
+
         createPetButton.addEventListener("click", this.showPetForm)
 
     }
 
     showPetForm(){
+   
         document.getElementById('pet_form_block').style.display = "block"; 
         
     } 
+
+
 
    
     // handlePetSubmit(e){

@@ -10,24 +10,30 @@ class Pet{
         this.image = image
         this.user_id = user_id
         Pet.all.push(this)
-        
+        this.element = document.createElement("li")
         
     }
 
+
     render(){
-        const allUserPets = Pet.all.filter((obj) => obj.user_id === this.user_id)
-        
-        // Pet.all.forEach(pet=>{
-        //     newElement.innerHTML += 
-        //     `<li id= "div_pets">
-        //     <img src=${pet.image}><br>
-        //         ${pet.name}}<br>
-        //         ${pet.gender}
-        //     </li>`
-           
-        // })
-    //    allUserPets.first.image
+        // debugger
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        //clears canvas 
+        //places dog image on canvas 
+          const image = new Image();
+          image.src = `${this.image}`;
+          image.onload = () => {
+          ctx.drawImage(image, 125,  50, 20, 20)
+          }
     }
+
+
+
+    
+
+    
+
+    
     
   
 }
