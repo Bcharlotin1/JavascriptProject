@@ -7,8 +7,10 @@ class UsersController < ApplicationController
     def create 
 
         if user = User.find_or_create_by(user_params)
+            
             render json: user
         else
+         
             render json: {error: user.errors.full_messages}
         end
     end

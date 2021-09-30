@@ -3,18 +3,18 @@ class PetApi{
         this.port = port
     }
 
-    getPets(){
-        fetch(this.port + `/pets`)
-        .then(response => response.json())
-        .then(data => {
+    // getPets(){
+    //     fetch(this.port + `/pets`)
+    //     .then(response => response.json())
+    //     .then(data => {
         
-            for(const pet of data){
-                let newPet = new Pet(pet)
-                  newPet.render()
-            }
-        })
-        .catch(error => {console.log(error.message)})
-    }
+    //         for(const pet of data){
+    //             let newPet = new Pet(pet)
+    //               newPet.render()
+    //         }
+    //     })
+    //     .catch(error => {console.log(error.message)})
+    // }
 
     createPet(){
     
