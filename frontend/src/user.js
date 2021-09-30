@@ -7,7 +7,7 @@ class User{
         User.allUsers.push(this)
         
     }
-    static currentUser = this.id
+    static currentUser = this
     // filling of the infmations/ post method
 
     attachUserToDom(){
@@ -29,49 +29,54 @@ class User{
                 </ul>
 
             </div>
-            <div id="create_pet_button">
+            <div id="pet_button_container">
                 <button id="pet_button">Create Pet</button>
             </div> 
         </div>`
-        
-        this.attachPetToDom()
-    }
 
-    attachPetToDom(){
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        
-        const userPetsListElement = document.getElementById("pet_list")
-        const createPetButton = document.getElementById("pet_button")
-        userPetsListElement.innerHTML = ""
 
-        this.pets.forEach(pet => {
-            debugger
-            pet.element.innerHTML =
+        Pet.attachPetToDom(this)
+
     
-            `<li><input type='radio' class= "div_pets" name='div_pets' value='${pet,image}' checked>
-                <img src=${pet.image}><br>
-                ${pet.name}<br>
-                ${pet.gender}
-            </input>
-
-            <div class="delete_dog">
-                <button class="delete_button" data-id=${pet.id}> Delete</button>
-            </div> 
-            </li>`
-        });
-    
-        userPetsListElement.append(pet.element)
-        const petConsolebutons = document.querySelectorAll(".div_pets")
-
-        createPetButton.addEventListener("click", this.showPetForm)
 
     }
 
-    showPetForm(){
+
+    // attachPetToDom(){
+    //     ctx.clearRect(0, 0, canvas.width, canvas.height);
+        
+    //     const userPetsListElement = document.getElementById("pet_list")
+    //     const createPetButton = document.getElementById("pet_button")
+    //     userPetsListElement.innerHTML = ""
+
+    //     this.pets.forEach(pet => {
+    //         debugger
+    //         pet.element.innerHTML =
+    
+    //         `<li><input type='radio' class= "div_pets" name='div_pets' value='${pet,image}' checked>
+    //             <img src=${pet.image}><br>
+    //             ${pet.name}<br>
+    //             ${pet.gender}
+    //         </input>
+
+    //         <div class="delete_dog">
+    //             <button class="delete_button" data-id=${pet.id}> Delete</button>
+    //         </div> 
+    //         </li>`
+    //     });
+    
+    //     userPetsListElement.append(pet.element)
+    //     const petConsolebutons = document.querySelectorAll(".div_pets")
+
+    //     createPetButton.addEventListener("click", this.showPetForm)
+
+    // }
+
+    // showPetForm(){
    
-        document.getElementById('pet_form_block').style.display = "block"; 
+    //     document.getElementById('pet_form_block').style.display = "block"; 
         
-    } 
+    // } 
 
 
 

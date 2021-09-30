@@ -79,7 +79,7 @@ playGameButton.addEventListener("click", div_show)
     //hids form after submission 
     e.preventDefault();
     userCall.createOrGetUser(e)
-    petCall.getPets()
+    // petCall.getPets()
     // calling the userAPI
   }
  //--------------------------------------
