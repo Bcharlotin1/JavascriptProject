@@ -3,18 +3,6 @@ class PetApi{
         this.port = port
     }
 
-    // getPets(){
-    //     fetch(this.port + `/pets`)
-    //     .then(response => response.json())
-    //     .then(data => {
-        
-    //         for(const pet of data){
-    //             let newPet = new Pet(pet)
-    //               newPet.render()
-    //         }
-    //     })
-    //     .catch(error => {console.log(error.message)})
-    // }
 
     createPet(){
     
@@ -60,7 +48,7 @@ class PetApi{
         .then(response => response.json())
         .then(data => { 
             const newPet = new Pet(data)
-            const user = User.allUsers.filter(this.test.bind(null, data))
+            const user = User.allUsers.filter(this.bindData.bind(null, data))
             //binded data to  filter so that we can have acces to data
             user[0].pets.push(newPet)
             //creates new pet in js class
@@ -69,15 +57,16 @@ class PetApi{
         }).catch(error => {console.log(error.message)})
     }
 
-    test(user, data){
+    bindData(user, data){
         return user.user.username === data.username
     }
 
 
-    deletePet(e){
-        debugger
+    deletePet =(e)=>{
+    
         const id = e.target.dataset.id
-        e.target.parentElement.remove()
+      
+        e.target.parentElement.parentElement.remove()
         fetch(`${this.port}/pets/${id}`, {method: 'DELETE'})
         .then(response => response.json())
         .then(json => alert(json.message))
