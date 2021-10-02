@@ -91,7 +91,7 @@ class Pet{
     static render = (currentPetImage) =>{
         let  petHTML = currentPetImage.previousElementSibling.value
         let currentPetObj;
-        
+
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         //clears canvas 
         //places dog image on canvas 
@@ -101,7 +101,7 @@ class Pet{
           ctx.drawImage(image, 125,  50, 20, 20)
           }
 
-        //pet canvaus contolrlo actions 
+        //pet canvaus contolrlo actions ll 
       
 
         Pet.all.forEach((petObj)=> {
