@@ -49,11 +49,12 @@ class PetApi{
         .then(data => { 
             const newPet = new Pet(data)
             const user = User.allUsers.filter(this.bindData.bind(null, data))
+           
             //binded data to  filter so that we can have acces to data
             user[0].pets.push(newPet)
             //creates new pet in js class
             Pet.attachPetToDom(user[0])
-            //attaches users new pet to don
+            //attaches users new pet to dom
         }).catch(error => {console.log(error.message)})
     }
 
@@ -63,7 +64,7 @@ class PetApi{
 
 
     deletePet =(e)=>{
-    
+
         const id = e.target.dataset.id
       
         e.target.parentElement.parentElement.remove()

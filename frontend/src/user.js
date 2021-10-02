@@ -7,12 +7,11 @@ class User{
         User.allUsers.push(this)
         
     }
-    static currentUser = this
+
     // filling of the infmations/ post method
 
     attachUserToDom(){
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        //clears canvas
+       
         //create the left hand item box
         consoleElement.innerHTML += `
         <div class="sidebar">
