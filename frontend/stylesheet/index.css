@@ -212,3 +212,28 @@ ul {
         margin-left: 100px;
 
   } 
+
+  /*status bar*/
+
+#statsbar_contaner{
+    height: 50px;
+    background-color: rgb(48, 47, 44);
+    display: flex;
+    justify-content: center;
+    padding-top: 15px;
+    width: 900px;
+}
+#Progress_Status {
+    width: 50%;
+    background-color: #ddd;
+    position: absolute;
+  }
+    
+  #myprogressBar {
+    width: 100%;
+    height: 35px;
+    background-color: #4CAF50;
+    text-align: center;
+    line-height: 32px;
+    color: black;
+  }

@@ -8,12 +8,25 @@ const playGameButton = document.getElementById("popup")
 const userForm = document.getElementById('user_form')
 const petForm = document.getElementById('pet_form')
 const petConsole = document.getElementById('pet_console')
+const statusbar = document.getElementById("myprogressBar")
+
 const userCall = new UserApi(port)
 const petCall = new PetApi(port)
 
 
 //hide pet console 
 // petConsole.style.display = "none"
+
+function loop() {
+  let width = statusbar.style.width;
+  let new_width = width - 10;
+  setTimeout(function () {
+    let barWidth = statusbar.style.width;
+    debugger
+    loop()
+  }, 9000); //9000 = 9000ms = 9s
+};
+loop()
 
 //----form evnets to get user input
 
