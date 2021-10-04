@@ -215,7 +215,7 @@ ul {
 
   /*status bar*/
 
-#statsbar_contaner{
+#statusbar_container{
     height: 50px;
     background-color: rgb(48, 47, 44);
     display: flex;
