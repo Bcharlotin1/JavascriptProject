@@ -8,27 +8,19 @@ const playGameButton = document.getElementById("popup")
 const userForm = document.getElementById('user_form')
 const petForm = document.getElementById('pet_form')
 const petConsole = document.getElementById('pet_console')
+const feedDog = document.getElementById('food')
+const washDog = document.getElementById('wash')
+const walkDog = document.getElementById('walk')
+const statusbarContainer = document.getElementById('statusbar_container')
 const statusbar = document.getElementById("myprogressBar")
 const userCall = new UserApi(port)
 const petCall = new PetApi(port)
 
 
 //hide pet console 
-// petConsole.style.display = "none"
-let i = 100
-function loop() {
+petConsole.style.display = "none"
+statusbarContainer.style.display = "none"
 
-
-      setTimeout(function () {
-       statusbar.style.width = `${i}%`
-        debugger
-        i = i - 10
-        loop()
-      }, 1000); //9000 = 9000ms = 9s
-
-  
-};
-loop()
 
 //----form evnets to get user input
 

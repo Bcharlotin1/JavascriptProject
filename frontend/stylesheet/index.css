@@ -193,14 +193,12 @@ ul {
 
 /* Pet consoleo bottom bar*/
 .navbar {
-    background-color: rgb(252, 252, 252);
+    background-color: rgb(252, 252, 252, 0.8);
     overflow: hidden;
     margin-left: 443px;
-    position: fixed;
-    bottom: 100px;
+    position: absolute;
+    bottom: 0px;
     width: 700px;
-    
-   
     display: flex;
     justify-content: center;
   
@@ -210,24 +208,29 @@ ul {
         width: 100px;
         height: 100px;
         margin-left: 100px;
+       
 
   } 
 
   /*status bar*/
 
 #statusbar_container{
+    z-index: 2;
     height: 50px;
     background-color: rgb(48, 47, 44);
-    display: flex;
     justify-content: center;
-    padding-top: 15px;
-    width: 500px;
-    margin-left: 0;
+    padding-top: 30px;
+    width: 300px;
+    margin-left: 650px;
+    margin-bottom: 500px;
+    position: relative;
+  
 }
 #Progress_Status {
-    width: 15%;
+    width:  95%;
     background-color: #ddd;
     position: absolute;
+    left: 2.5%;
   }
     
   #myprogressBar {
@@ -238,3 +241,14 @@ ul {
     line-height: 32px;
     color: black;
   }
+  h4{
+    font-family: MingLiU;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    margin-left: 650px;  
+    background: rgb(48, 47, 44);
+    padding-top: 10px;
+    padding-bottom: 10px;
+    margin-top: 0px;
+    width: 300px;
+}
