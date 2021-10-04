@@ -1,6 +1,5 @@
 class Pet{
     static all = [];
-    // static userPetsListElement = document.getElementById("pet_list")
 
     constructor({name, gender ,dog_type, happiness, image, user_id, id }){
         this.name = name
@@ -12,27 +11,13 @@ class Pet{
         this.id = id
         this.element = document.createElement("li")
         this.element.addEventListener("click", this.handleClick)
+
         Pet.all.push(this)
     }
-    handleClick = (e)=>{
-        
-        petCall.deletePet(e)
-    }
-
-
-    render(){
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-        //clears canvas 
-        //places dog image on canvas 
-          const image = new Image();
-          image.src = `${this.image}`;
-          image.onload = () => {
-          ctx.drawImage(image, 125,  50, 20, 20)
-          }
-    }
-
-    addingLi =(userPetsListElement)=>{
+  
     
+
+    addingLi=(userPetsListElement)=>{
         this.element.innerHTML =
     
             `<input type='radio' class= "div_pets" name='div_pets' value='${this.image}' checked>
@@ -43,12 +28,12 @@ class Pet{
 
             <div class="delete_dog">
                 <button class="delete_button" data-id=${this.id}> Delete</button>
-            </div> 
-        `   
+            </div> `   
 
             userPetsListElement.append(this.element)
-
+       
     }
+
     static attachPetToDom =(userObj)=>{
         ctx.clearRect(0, 0, canvas.width, canvas.height);
          //clears canvas 
@@ -60,34 +45,14 @@ class Pet{
             const newpet = new Pet(pet)
             
             newpet.addingLi(userPetsListElement)
-        //     debugger
-        //     this.element.innerHTML =
-    
-        //     `<input type='radio' class= "div_pets" name='div_pets' value='${newpet.image}' checked>
-        //         <img src=${newpet.image}><br>
-        //         ${newpet.name}<br>
-        //         ${newpet.gender}
-        //     </input>
-
-        //     <div class="delete_dog">
-        //         <button class="delete_button" data-id=${newpet.id}> Delete</button>
-        //     </div> 
-        // `   
-        
-        //     userPetsListElement.append(this.element)
-            // const deleteButton = userPetsListElement.querySelector(".delete_button")
-            // deleteButton.addEventListener("click", petCall.deletePet)
-        });
        
+        });
         
-        
-        const petConsolebutons = document.querySelectorAll(".div_pets")
-        // const deleteButton = userPetsListElement.querySelector(".delete_button")
-        // // grabbing all class names 
-        // // debugger
-        // deleteButton.addEventListener("click", petCall.deletePet)
+        // const petConsolebutons = document.querySelectorAll(".div_pets")
+        //grabbign pets from radio button to displaay thme later on canvas using render() 
         createPetButton.addEventListener("click", this.showPetForm)
-
+   
+        
     }
 
     static showPetForm = ()=>{
@@ -96,21 +61,67 @@ class Pet{
         
     } 
 
-    
-    // displayPet(){
+    handleClick = (e)=>{
+        let arrayOfPetImgElemnets = []
+        let currentPetImage;
+        const petConsolebutons = document.querySelectorAll(".div_pets")
+        petConsolebutons.forEach((div)=>{
+            arrayOfPetImgElemnets.push(div.nextElementSibling)
+        })
+
+       if (e.target.innerText === "Delete"){
+            petCall.deletePet(e)
+       }
        
-    // }
+       else if(arrayOfPetImgElemnets.some((element)=>{
+            let jsEvent = e 
+            //passing the event
+                if(element == jsEvent.target){
+                    currentPetImage = element 
+                    //need to use curren pet image for render
+                    return true 
+                    //need to expcitly return tre sisn its an if satment insied of .som whci is suposes be retung a true or fals value
+                 }       
+           })){
+            Pet.render(currentPetImage)
+        }
+        
+    }
+
+    static render = (currentPetImage) =>{
+        let  petHTML = currentPetImage.previousElementSibling.value
+        let currentPetObj;
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        //clears canvas 
+        //places dog image on canvas 
+          const image = new Image();
+          image.src = `${petHTML}`;
+          image.onload = () => {
+          ctx.drawImage(image, 125,  50, 20, 20)
+          }
+
+        //pet canvaus contolrlo actions ll 
+      
+
+        Pet.all.forEach((petObj)=> {
+            if(petHTML == petObj.image){
+                currentPetObj = petObj
+            }
+        })
+        
+        Canvas.renderPetconsole(currentPetObj)
+  
+    }
+
+    
+  
     
   
 
 
 
 
-    
 
-    
-
-    
-    
   
 }
