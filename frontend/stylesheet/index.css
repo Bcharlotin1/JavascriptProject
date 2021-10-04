@@ -221,10 +221,11 @@ ul {
     display: flex;
     justify-content: center;
     padding-top: 15px;
-    width: 900px;
+    width: 500px;
+    margin-left: 0;
 }
 #Progress_Status {
-    width: 50%;
+    width: 15%;
     background-color: #ddd;
     position: absolute;
   }
