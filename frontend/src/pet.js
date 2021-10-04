@@ -109,8 +109,9 @@ class Pet{
                 currentPetObj = petObj
             }
         })
-        
-        Canvas.renderPetconsole(currentPetObj)
+        let i = currentPetObj.happiness
+        new Canvas(currentPetObj)
+        // Canvas.renderPetconsole(currentPetObj)
   
     }
 
