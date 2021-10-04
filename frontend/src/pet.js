@@ -15,7 +15,7 @@ class Pet{
         Pet.all.push(this)
     }
   
-
+    
 
     addingLi=(userPetsListElement)=>{
         this.element.innerHTML =

@@ -7,10 +7,13 @@ const consoleElement = document.getElementById("wrapper")
 const playGameButton = document.getElementById("popup")
 const userForm = document.getElementById('user_form')
 const petForm = document.getElementById('pet_form')
+const petConsole = document.getElementById('pet_console')
 const userCall = new UserApi(port)
 const petCall = new PetApi(port)
 
 
+//hide pet console 
+// petConsole.style.display = "none"
 
 //----form evnets to get user input
 
