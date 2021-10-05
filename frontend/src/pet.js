@@ -91,9 +91,10 @@ class Pet{
     static render = (currentPetImage) =>{
         let  petHTML = currentPetImage.previousElementSibling.value
         let currentPetObj;
-
+        canvas.style.background = "none"
         ctx.clearRect(0, 0, canvas.width, canvas.height);
         //clears canvas 
+
         //places dog image on canvas 
           const image = new Image();
           image.src = `${petHTML}`;
@@ -112,7 +113,7 @@ class Pet{
         })
         const i = currentPetObj.happiness
         new Canvas(currentPetObj)
-        // Canvas.renderPetconsole(currentPetObj)
+       
   
     }
 
