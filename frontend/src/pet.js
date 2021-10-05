@@ -20,7 +20,7 @@ class Pet{
     addingLi=(userPetsListElement)=>{
         this.element.innerHTML =
     
-            `<input type='radio' class= "div_pets" name='div_pets' value='${this.image}' checked>
+            `<input type='radio' class= "div_pets" name='div_pets' value='${this.image}' >
                 <img src=${this.image}><br>
                 ${this.name}<br>
                 ${this.gender}
@@ -100,6 +100,7 @@ class Pet{
           image.onload = () => {
           ctx.drawImage(image, 125,  50, 20, 20)
           }
+          image.addEventListener("keypress", Canvas.press);
 
         //pet canvaus contolrlo actions ll 
       
@@ -109,7 +110,7 @@ class Pet{
                 currentPetObj = petObj
             }
         })
-        let i = currentPetObj.happiness
+        const i = currentPetObj.happiness
         new Canvas(currentPetObj)
         // Canvas.renderPetconsole(currentPetObj)
   
