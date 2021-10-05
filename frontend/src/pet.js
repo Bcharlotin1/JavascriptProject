@@ -100,7 +100,7 @@ class Pet{
           image.onload = () => {
           ctx.drawImage(image, 125,  50, 20, 20)
           }
-          image.addEventListener("keypress", Canvas.press);
+          
 
         //pet canvaus contolrlo actions ll 
       

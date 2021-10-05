@@ -24,10 +24,15 @@ class UserApi{
         fetch(this.port +`/users`, configObject)
         .then(response => response.json())
         .then(json => {
-    
-            const newUser = new User(json)
-            newUser.attachUserToDom()
-            //creating our javascript object after creating an object in the backend
+            if (json.error){
+                alert(json.error.join(" "))
+                playGameButton.style.display = ""
+            }else{
+                const newUser = new User(json)
+                newUser.attachUserToDom()
+                //creating our javascript object after creating an object in the backend
+            }
+       
         })
         .catch(error => {console.log(error.message)})
     }

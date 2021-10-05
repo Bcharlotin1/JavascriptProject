@@ -5,9 +5,9 @@ class UsersController < ApplicationController
     end
     
     def create 
-
-        if user = User.find_or_create_by(user_params)
-            
+        user = User.find_or_create_by(user_params)
+        if user.id
+        
             render json: user
         else
          

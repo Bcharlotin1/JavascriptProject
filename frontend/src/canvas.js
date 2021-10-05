@@ -3,7 +3,7 @@ class Canvas{
     constructor(petObj){
         this.petObject = petObj
         this.renderPetconsole()
-        
+    
     }
     renderPetconsole(){
         petConsole.style.display = "block"
@@ -53,19 +53,7 @@ class Canvas{
     }
 
 
-    static press = (event)=>{
-        debugger
-        if(event.keyCode == 37) {//LEFT
-          x = x - 1;
-        } else if(event.keyCode == 38) {//UP
-          y = y - 1;
-        } else if(event.keyCode ==39) {//RIGHT
-          x = x + 1;
-        } else if(event.keyCode == 40) {//DOWN
-          y = y + 1;
-        }
-    }
-  
+
 }
 
     

@@ -53,7 +53,7 @@ playGameButton.addEventListener("click", div_show)
     petCall.createPet()
 }  
 
-  
+
  
 
  
