@@ -1,29 +1,31 @@
 class Canvas{
+    static i;
     constructor(petObj){
         this.petObject = petObj
-        this.renderPetconsole(this.petObject)
+        this.renderPetconsole()
    
     }
-    renderPetconsole(petObj){
+    renderPetconsole(){
         petConsole.style.display = "block"
         statusbarContainer.style.display = "block"
-        
-        this.timeLoop()
+        Canvas.i = this.petObject.happiness
+        Canvas.timeLoop()
     }
 
-    timeLoop(){
-        
-        
-        if(i > 0){
+    static timeLoop= ()=>{
+        if(Canvas.i > 0){
             setTimeout(function () {
-                statusbar.style.width = `${i}%`
-                i = i - 10
-                timeLoop()
+                statusbar.style.width = `${Canvas.i}%`
+                Canvas.i = Canvas.i - 10
+                // debugger
+                Canvas.timeLoop()
             }, 1000); //9000 = 9000ms = 9s
-        }else{
-            debugger
+        }
+        else{
+            canvas.style.background = "black"
             ctx.font = "30px Arial";
-            ctx.fillText("PET DIED", 10, 50);
+            ctx.fillStyle = "white"
+            ctx.fillText("PET DIED", 80, 100);
             ctx.textAlign = "center";
             // break;
         }
