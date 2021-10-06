@@ -15,8 +15,6 @@ class Pet{
         Pet.all.push(this)
     }
   
-    
-
     addingLi=(userPetsListElement)=>{
         this.element.innerHTML =
     
@@ -76,7 +74,7 @@ class Pet{
        else if(arrayOfPetImgElemnets.some((element)=>{
             let jsEvent = e 
             //passing the event
-                if(element == jsEvent.target){
+                if(element === jsEvent.target){
                     currentPetImage = element 
                     //need to use curren pet image for render
                     return true 
@@ -101,13 +99,12 @@ class Pet{
           image.onload = () => {
           ctx.drawImage(image, 125,  50, 20, 20)
           }
-          
-
+    
         //pet canvaus contolrlo actions ll 
-      
 
         Pet.all.forEach((petObj)=> {
-            if(petHTML == petObj.image){
+            if(petHTML === petObj.image){
+                debugger
                 currentPetObj = petObj
             }
         })

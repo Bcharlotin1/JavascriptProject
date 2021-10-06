@@ -60,13 +60,27 @@ class PetApi{
 
     bindData(user, data){
         return user.user.username === data.username
+        
     }
 
 
     deletePet =(e)=>{
 
-        const id = e.target.dataset.id
-      
+        const id = parseInt( e.target.dataset.id)
+        // debugger
+        const userId = Pet.all.find((pet)=>pet.id === id).user_id
+        const user = User.allUsers.find((user)=> user.id === userId)
+  
+        for (const pet of user.pets){
+            if (pet.id === id){
+                
+                const i = user.pets.indexOf(pet)
+                user.pets.splice(i, 1)
+              
+            }
+        }
+     
+
         e.target.parentElement.parentElement.remove()
         fetch(`${this.port}/pets/${id}`, {method: 'DELETE'})
         .then(response => response.json())

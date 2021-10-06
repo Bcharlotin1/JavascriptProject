@@ -37,15 +37,15 @@ class Canvas{
 
     static handleClick = (e)=>{
     
-        if(e.target ==feedDog){
+        if(e.target ===feedDog){
             Canvas.i = Canvas.i + 30
             statusbar.style.width = `${Canvas.i}%`
         }
-        if(e.target == washDog){
+        if(e.target === washDog){
             Canvas.i = Canvas.i + 20
             statusbar.style.width = `${Canvas.i}%`
         }
-        if(e.target == walkDog){
+        if(e.target === walkDog){
             Canvas.i = Canvas.i + 10
             statusbar.style.width = `${Canvas.i}%`
         }
