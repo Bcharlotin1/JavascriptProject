@@ -8,8 +8,6 @@ class User{
         
     }
 
-    // filling of the infmations/ post method
-
     attachUserToDom(){
        
         //create the left hand item box

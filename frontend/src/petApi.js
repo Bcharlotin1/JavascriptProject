@@ -1,9 +1,11 @@
 class PetApi{
+    
     constructor(port){
         this.port = port
     }
 
     createPet(){
+
         let selectedDog;
         let selectedDogGender;
         const dogName = document.getElementById("name").value
@@ -52,7 +54,6 @@ class PetApi{
                 if (user.username === data.user.username){
                     return user 
                 }
-
             })
             
             user.pets.push(newPet)
@@ -66,7 +67,6 @@ class PetApi{
     deletePet =(e)=>{
 
         const id = parseInt( e.target.dataset.id)
-        // debugger
         const userId = Pet.all.find((pet)=>pet.id === id).user_id
         const user = User.allUsers.find((user)=> user.id === userId)
   
@@ -75,11 +75,8 @@ class PetApi{
                 
                 const i = user.pets.indexOf(pet)
                 user.pets.splice(i, 1)
-              
             }
         }
-     
-
         e.target.parentElement.parentElement.remove()
         fetch(`${this.port}/pets/${id}`, {method: 'DELETE'})
         .then(response => response.json())
