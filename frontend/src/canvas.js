@@ -46,7 +46,7 @@ class Canvas{
             statusbar.style.width = `${Canvas.i}%`
         }
         if(e.target === walkDog){
-            Canvas.i = Canvas.i + 10
+            Canvas.i = Canvas.i + 20
             statusbar.style.width = `${Canvas.i}%`
         }
      

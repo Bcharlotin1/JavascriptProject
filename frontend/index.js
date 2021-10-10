@@ -17,34 +17,33 @@ const userCall = new UserApi(port)
 const petCall = new PetApi(port)
 
 
-//hide pet console 
+//----hides pet console 
 petConsole.style.display = "none"
 statusbarContainer.style.display = "none"
 
-
-//----form evnets to get user input
+//----User form button
 
 playGameButton.addEventListener("click", div_show)
 
-  //Function To Display Popup
-  function div_show() {
+//--- function diplays black and has event lsitner
+  function div_show(){
   document.getElementById('abc').style.display = "block";
-  // black = Element is rendered as a block-level element
+  
   userForm.addEventListener("submit", handleSubmit)
   }
-  //Function to Hide Popup
 
 
   function handleSubmit(e){
+//----hides button an form
     document.getElementById('abc').style.display = "none";
     playGameButton.style.display = "none"
-    //hids form after submission 
+   
     e.preventDefault();
     userCall.createOrGetUser(e)
-    // calling the userAPI
   }
+
  //--------------------------------------
-  // pet form event listener
+//---pet form event listener
   petForm.addEventListener("submit", handlePetSubmit)
   
   function handlePetSubmit(e){

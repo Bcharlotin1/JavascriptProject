@@ -63,6 +63,7 @@ class Pet{
         let arrayOfPetImgElemnets = []
         let currentPetImage;
         const petConsolebutons = document.querySelectorAll(".div_pets")
+        
         petConsolebutons.forEach((div)=>{
             arrayOfPetImgElemnets.push(div.nextElementSibling)
         })
@@ -104,7 +105,6 @@ class Pet{
 
         Pet.all.forEach((petObj)=> {
             if(petHTML === petObj.image){
-                debugger
                 currentPetObj = petObj
             }
         })
