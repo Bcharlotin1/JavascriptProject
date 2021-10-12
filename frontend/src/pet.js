@@ -51,7 +51,7 @@ class Pet{
     }
 
     static showPetForm = ()=>{
-    
+
         document.getElementById('pet_form_block').style.display = "block"; 
         
     } 
@@ -59,9 +59,9 @@ class Pet{
     handleClick = (e)=>{
         let arrayOfPetImgElemnets = []
         let currentPetImage;
-        const petConsolebutons = document.querySelectorAll(".div_pets")
+        const petButtons = document.querySelectorAll(".div_pets")
         
-        petConsolebutons.forEach((div)=>{
+        petButtons.forEach((div)=>{
             arrayOfPetImgElemnets.push(div.nextElementSibling)
         })
 
