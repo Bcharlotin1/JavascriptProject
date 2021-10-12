@@ -17,7 +17,7 @@ const userCall = new UserApi(port)
 const petCall = new PetApi(port)
 
 
-//----hides pet console 
+//---- pet console 
 petConsole.style.display = "none"
 statusbarContainer.style.display = "none"
 
@@ -25,16 +25,15 @@ statusbarContainer.style.display = "none"
 
 playGameButton.addEventListener("click", div_show)
 
-//--- function diplays black and has event lsitner
+//--- function diplay block 
   function div_show(){
   document.getElementById('abc').style.display = "block";
   
   userForm.addEventListener("submit", handleSubmit)
   }
 
-
+//---user form event listner
   function handleSubmit(e){
-//----hides button an form
     document.getElementById('abc').style.display = "none";
     playGameButton.style.display = "none"
    

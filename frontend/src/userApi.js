@@ -5,13 +5,13 @@ class UserApi{
 
     }
 
-
     createOrGetUser(e){
         const username = e.target.username.value 
     
         const userInfo = {
             username
         }
+
         const configObject = {
             method: 'POST',
             headers: {
@@ -30,7 +30,7 @@ class UserApi{
             }else{
                 const newUser = new User(json)
                 newUser.attachUserToDom()
-                //creating our javascript object after creating an object in the backend
+               
             }
        
         })

@@ -33,8 +33,7 @@ class Pet{
     }
 
     static attachPetToDom =(userObj)=>{
-        ctx.clearRect(0, 0, canvas.width, canvas.height);
-         //clears canvas 
+   
         const userPetsListElement = document.getElementById("pet_list")
         const createPetButton = document.getElementById("pet_button")
         userPetsListElement.innerHTML = ""
@@ -45,9 +44,7 @@ class Pet{
             newpet.addingLi(userPetsListElement)
        
         });
-        
-        // const petConsolebutons = document.querySelectorAll(".div_pets")
-        //grabbign pets from radio button to displaay thme later on canvas using render() 
+       
         createPetButton.addEventListener("click", this.showPetForm)
    
         
@@ -71,20 +68,19 @@ class Pet{
        if (e.target.innerText === "Delete"){
             petCall.deletePet(e)
        }
-       
+     //-- handles clicks on pet image  
        else if(arrayOfPetImgElemnets.some((element)=>{
             let jsEvent = e 
-            //passing the event
+          
                 if(element === jsEvent.target){
                     currentPetImage = element 
-                    //need to use curren pet image for render
+                  
                     return true 
-                    //need to expcitly return tre sisn its an if satment insied of .som whci is suposes be retung a true or fals value
+                   
                  }       
            })){
             Pet.render(currentPetImage)
-        }
-        
+        } 
     }
 
     static render = (currentPetImage) =>{
@@ -101,14 +97,14 @@ class Pet{
           ctx.drawImage(image, 125,  50, 20, 20)
           }
     
-        //pet canvaus contolrlo actions ll 
+        //pet canvas control actions  
 
         Pet.all.forEach((petObj)=> {
             if(petHTML === petObj.image){
                 currentPetObj = petObj
             }
         })
-        const i = currentPetObj.happiness
+       
         new Canvas(currentPetObj)
        
   

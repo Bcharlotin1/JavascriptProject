@@ -10,7 +10,7 @@ class User{
 
     attachUserToDom(){
        
-        //create the left hand item box
+        //create the left hand user box
         consoleElement.innerHTML += `
         <div class="sidebar">
             <div class="profile">

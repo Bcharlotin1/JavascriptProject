@@ -17,9 +17,9 @@ class Canvas{
             setTimeout(function () {
                 statusbar.style.width = `${Canvas.i}%`
                 Canvas.i = Canvas.i - 10
-                // debugger
+           
                 Canvas.timeLoop()
-            }, 1000); //9000 = 9000ms = 9s
+            }, 1000); //1000 = 1000ms = 1s
        
             feedDog.addEventListener("click", Canvas.handleClick)
             washDog.addEventListener("click", Canvas.handleClick)
